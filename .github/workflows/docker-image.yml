@@ -21,7 +21,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: /tmp/.buildx-cache
-        key: ${{ runner.os }}-single-buildx-${{ github.ref }}
+        key: ${{ runner.os }}-single-buildx-${{ github.sha }}
         restore-keys: |
           ${{ runner.os }}-single-buildx
     - name: Build
