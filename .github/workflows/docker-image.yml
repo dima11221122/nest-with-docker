@@ -28,6 +28,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
+        builder: ${{ steps.buildx.outputs.name }}
         push: false
         tags: test/image:${{ github.sha }}
         cache-from: type=local,src=/tmp/.buildx-cache
