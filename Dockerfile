@@ -6,7 +6,7 @@ COPY . /app
 RUN npm run build
 
 # Final image
-FROM node:lts
+FROM node:lts as deploy
 EXPOSE 3000
 WORKDIR /app
 COPY --from=build /app/dist /app

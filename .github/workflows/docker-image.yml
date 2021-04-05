@@ -44,6 +44,8 @@ jobs:
       with:
         context: .
         builder: ${{ steps.buildx.outputs.name }}
+        # Set the desired build target here
+        target: deploy
         push: false
         tags: ${{ steps.prep.outputs.tagged_image }}
         cache-from: type=local,src=/tmp/.buildx-cache
